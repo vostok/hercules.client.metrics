@@ -35,8 +35,8 @@ namespace Vostok.Hercules.Client.Metrics
             yield return CreateMetricEvent(timestamp, "RejectedRecordsSize", delta.RejectedRecords.Size);
             yield return CreateMetricEvent(timestamp, "SentRecordsSize", delta.SentRecords.Size);
             yield return CreateMetricEvent(timestamp, "SentRecordsCount", delta.SentRecords.Count);
-            yield return CreateMetricEvent(timestamp, "StoredRecordsSize", delta.StoredRecords.Size);
-            yield return CreateMetricEvent(timestamp, "StoredRecordsCount", delta.StoredRecords.Count);
+            yield return CreateMetricEvent(timestamp, "StoredRecordsSize", statistic.StoredRecords.Size);
+            yield return CreateMetricEvent(timestamp, "StoredRecordsCount", statistic.StoredRecords.Count);
         }
 
         private MetricEvent CreateMetricEvent(DateTimeOffset timestamp, string name, double value)
