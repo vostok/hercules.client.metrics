@@ -25,7 +25,7 @@ namespace Vostok.Hercules.Client.Metrics
             ClusterResult result;
             using (timer.Measure())
             {
-                result = await next(context);
+                result = await next(context).ConfigureAwait(false);
             }
 
             SendMetrics(result);
