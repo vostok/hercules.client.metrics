@@ -1,0 +1,17 @@
+notests *default:
+  build:
+    target: Vostok.Hercules.Client.Metrics.sln
+    configuration: NoTests
+    tool:
+      name: dotnet
+
+  install:
+    - Vostok.Hercules.Client.Metrics/bin/Release/netstandard2.0/Vostok.Hercules.Client.Metrics.dll
+
+  deps:
+    - vostok.devtools
+
+full-build > notests:
+  build:
+    target: Vostok.Hercules.Client.Metrics.sln
+    configuration: Release
