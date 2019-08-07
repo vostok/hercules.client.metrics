@@ -16,7 +16,7 @@
 
   <PropertyGroup>
     <Title>Vostok.Hercules.Client.Metrics</Title>
-    <Description>Helper library for monitoring hercules client.</Description>
+    <Description>An utility library containing helper classes for monitoring hercules client.</Description>
   </PropertyGroup>
 
   <PropertyGroup>
