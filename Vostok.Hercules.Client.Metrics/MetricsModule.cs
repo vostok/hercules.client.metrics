@@ -11,6 +11,7 @@ namespace Vostok.Hercules.Client.Metrics
 {
     internal class MetricsModule : IRequestModule
     {
+        private MetricsModule nestedModule;
         private IMetricGroup1<ICounter> codesCounter;
         private ITimer timer;
 
@@ -20,12 +21,22 @@ namespace Vostok.Hercules.Client.Metrics
             timer = metricContext.CreateTimer("time");
         }
 
+        public void AddNestedModule(MetricsModule module)
+        {
+            if (nestedModule == null)
+                nestedModule = module;
+            else
+                nestedModule.AddNestedModule(module);
+        }
+
         public async Task<ClusterResult> ExecuteAsync(IRequestContext context, Func<IRequestContext, Task<ClusterResult>> next)
         {
             ClusterResult result;
             using (timer.Measure())
             {
-                result = await next(context).ConfigureAwait(false);
+                result = nestedModule == null
+                    ? await next(context).ConfigureAwait(false)
+                    : await nestedModule.ExecuteAsync(context, next).ConfigureAwait(false);
             }
 
             SendMetrics(result);
