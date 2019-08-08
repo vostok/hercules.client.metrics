@@ -9,7 +9,7 @@ namespace Vostok.Hercules.Client.Metrics
     internal class HerculesSinkMetricsCounters : IScrapableMetric
     {
         private readonly HerculesSink herculesSink;
-        private HerculesSinkCounters previous = new HerculesSinkCounters((0, 0), (0, 0), (0, 0), 0, 0, 0);
+        private HerculesSinkCounters previous = HerculesSinkCounters.Zero;
         private readonly IDisposable registration;
         private readonly MetricTags tags;
 
