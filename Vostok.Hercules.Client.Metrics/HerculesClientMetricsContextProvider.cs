@@ -28,10 +28,10 @@ namespace Vostok.Hercules.Client.Metrics
                 {
                     AdditionalSetup = settings.AdditionalSetup,
                     MaximumMemoryConsumption = memoryLimit,
-                    MaximumPerStreamMemoryConsumption = memoryLimit,
-                    SuppressVerboseLogging = true
+                    MaximumPerStreamMemoryConsumption = memoryLimit
                 };
 
+                log = (log ?? LogProvider.Get()).WithMinimumLevel(LogLevel.Warn);
                 var sink = new HerculesSink(sinkSettings, log);
                 var metricsSender = new HerculesMetricSender(new HerculesMetricSenderSettings(sink));
                 return defaultMetricContext = new MetricContext(new MetricContextConfig(metricsSender));
