@@ -1,6 +1,6 @@
 # Vostok.Hercules.Client.Metrics
 
-[![Build status](https://ci.appveyor.com/api/projects/status/github/vostok/hercules.client.metrics?svg=true&branch=master)](https://ci.appveyor.com/project/vostok/hercules.client.metrics/branch/master)
+[![Build & Test & Publish](https://github.com/vostok/hercules.client.metrics/actions/workflows/ci.yml/badge.svg)](https://github.com/vostok/hercules.client.metrics/actions/workflows/ci.yml)
 [![NuGet](https://img.shields.io/nuget/v/Vostok.Hercules.Client.Metrics.svg)](https://www.nuget.org/packages/Vostok.Hercules.Client.Metrics)
 
 An utility library containing helper classes for monitoring hercules client.
