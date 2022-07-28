@@ -1,0 +1,7 @@
+static Vostok.Hercules.Client.Metrics.HerculesClientMetricsContextProvider.Get(Vostok.Hercules.Client.HerculesSinkSettings settings, Vostok.Logging.Abstractions.ILog log) -> Vostok.Metrics.IMetricContext
+static Vostok.Hercules.Client.Metrics.HerculesSinkExtensions.SetupMetrics(this Vostok.Hercules.Client.HerculesSink sink, Vostok.Metrics.IMetricContext metricContext) -> Vostok.Hercules.Client.HerculesSink
+static Vostok.Hercules.Client.Metrics.HerculesSinkSettingsExtensions.SetupMetrics(this Vostok.Hercules.Client.HerculesSinkSettings settings, Vostok.Metrics.IMetricContext metricContext) -> Vostok.Hercules.Client.HerculesSinkSettings
+Vostok.Hercules.Client.Metrics.HerculesClientMetricsContextProvider
+Vostok.Hercules.Client.Metrics.HerculesClientMetricsContextProvider.HerculesClientMetricsContextProvider() -> void
+Vostok.Hercules.Client.Metrics.HerculesSinkExtensions
+Vostok.Hercules.Client.Metrics.HerculesSinkSettingsExtensions
